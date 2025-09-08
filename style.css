@@ -3,15 +3,35 @@ body {
   padding: 0px;
 }
 
+button {
+  height: 250px;
+  width: 500px;
+  margin: 50px;
+  border-radius: 50px;
+  border: 10px solid hotpink;
+  font-size:50px;
+  font-weight: 900;
+  color: black;
+  background-color: honeydew;
+}
+
 .container {
   display: flex;
+  flex-direction: column;
+  height: 100vh;
+  width: 100vw;
+  justify-content: center;
+  align-items: center;
+  background-color: lightblue;
+}
+
+.pixelContainer {
+  display: flex;
   flex-wrap: wrap;
-  width: 1280px;
-  height: 1280px;
+  width: 1600px;
+  height: 1600px;
 }
 
 .pixel {
   background-color: hotpink;
-  height: 80px;
-  width:80px;
 }

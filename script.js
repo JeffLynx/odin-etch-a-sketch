@@ -1,7 +1,49 @@
-const container = document.querySelector(".container");
+const pixelContainer = document.querySelector(".pixelContainer");
 
+const button = document.getElementById("button");
+
+//Starting grid:
 for (let i = 0; i < 256; i++) {
   const pixel = document.createElement("div");
-  pixel.classList.add("pixel");  
-  container.appendChild(pixel);
+  pixel.classList.add("pixel");
+  pixel.style.height = ("100px");
+  pixel.style.width = ("100px")
+  pixelContainer.appendChild(pixel);
+  pixel.onmouseover = () => {
+    pixel.style.backgroundColor = "yellow";
+    console.log("over!");
+  }
+  pixel.onmouseout = () => {
+    console.log("out!");
+  }
 }
+
+//New grid:
+button.addEventListener("click", () => {
+  let sideLength = parseInt(prompt("Number of pixels per side:","Max 100!"));
+
+  if (isNaN(sideLength) || sideLength <= 0 || sideLength > 100) {
+    alert("Please enter a number between 1 and 100!");
+    return;
+  }
+
+  pixelContainer.innerHTML = "";
+
+  const containerSize = 1600;
+  const pixelSize = containerSize / sideLength;
+
+  for (let i = 0; i < (sideLength * sideLength); i++) {
+    const pixel = document.createElement("div");
+    pixel.classList.add("pixel");
+    pixel.style.height = `${pixelSize}px`;
+    pixel.style.width = `${pixelSize}px`;
+    pixelContainer.appendChild(pixel);
+    pixel.onmouseover = () => {
+      pixel.style.backgroundColor = "yellow";
+      console.log("over!");
+    }
+    pixel.onmouseout = () => {
+      console.log("out!");
+    }
+  }
+});
