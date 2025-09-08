@@ -5,12 +5,18 @@ const button = document.getElementById("button");
 //Starting grid:
 for (let i = 0; i < 256; i++) {
   const pixel = document.createElement("div");
+
+  let randomR = Math.floor(Math.random() * 256);
+  let randomG = Math.floor(Math.random() * 256);
+  let randomB = Math.floor(Math.random() * 256);
+  let randomColor = `rgb(${randomR}, ${randomG}, ${randomB})`;
+
   pixel.classList.add("pixel");
   pixel.style.height = ("100px");
   pixel.style.width = ("100px")
   pixelContainer.appendChild(pixel);
   pixel.onmouseover = () => {
-    pixel.style.backgroundColor = "yellow";
+    pixel.style.backgroundColor = randomColor;
     console.log("over!");
   }
   pixel.onmouseout = () => {
@@ -34,12 +40,18 @@ button.addEventListener("click", () => {
 
   for (let i = 0; i < (sideLength * sideLength); i++) {
     const pixel = document.createElement("div");
+
+    let randomR = Math.floor(Math.random() * 256);
+    let randomG = Math.floor(Math.random() * 256);
+    let randomB = Math.floor(Math.random() * 256);
+    let randomColor = `rgb(${randomR}, ${randomG}, ${randomB})`;
+
     pixel.classList.add("pixel");
     pixel.style.height = `${pixelSize}px`;
     pixel.style.width = `${pixelSize}px`;
     pixelContainer.appendChild(pixel);
     pixel.onmouseover = () => {
-      pixel.style.backgroundColor = "yellow";
+      pixel.style.backgroundColor = randomColor;
       console.log("over!");
     }
     pixel.onmouseout = () => {
