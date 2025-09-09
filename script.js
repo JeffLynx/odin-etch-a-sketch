@@ -10,11 +10,17 @@ for (let i = 0; i < 256; i++) {
   pixel.style.height = ("100px");
   pixel.style.width = ("100px")
   pixelContainer.appendChild(pixel);
+
+  let alpha = 1;
+
   pixel.onmouseover = () => {
     let randomR = Math.floor(Math.random() * 256);
     let randomG = Math.floor(Math.random() * 256);
     let randomB = Math.floor(Math.random() * 256);
-    let randomColor = `rgb(${randomR}, ${randomG}, ${randomB})`;
+    let randomColor = `rgb(${randomR}, ${randomG}, ${randomB}, ${alpha})`;
+
+    alpha = Math.max(alpha - 0.1, 0);
+
     pixel.style.backgroundColor = randomColor;
   }
 }
@@ -40,15 +46,17 @@ button.addEventListener("click", () => {
     pixel.style.height = `${pixelSize}px`;
     pixel.style.width = `${pixelSize}px`;
     pixelContainer.appendChild(pixel);
+
+    let alpha = 1;
+
     pixel.onmouseover = () => {
       let randomR = Math.floor(Math.random() * 256);
       let randomG = Math.floor(Math.random() * 256);
       let randomB = Math.floor(Math.random() * 256);
-      let randomColor = `rgb(${randomR}, ${randomG}, ${randomB})`;
+      let randomColor = `rgb(${randomR}, ${randomG}, ${randomB}, ${alpha})`;
+      
+      alpha = Math.max(alpha - 0.1, 0);
 
-      pixel.style.backgroundColor = randomColor;
-    }
-    pixel.onmouseout = () => {
       pixel.style.backgroundColor = randomColor;
     }
   }
