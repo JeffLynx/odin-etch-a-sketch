@@ -8,11 +8,9 @@ button {
   width: 500px;
   margin: 50px;
   border-radius: 50px;
-  border: 10px solid hotpink;
-  font-size:50px;
-  font-weight: 900;
+  font: bold 50px Arial, sans-serif;
   color: black;
-  background-color: honeydew;
+  background-color: mediumseagreen;
 }
 
 .container {
@@ -30,8 +28,9 @@ button {
   flex-wrap: wrap;
   width: 1600px;
   height: 1600px;
+  background-color: black;
 }
 
 .pixel {
-  background-color: hotpink;
+  background-color: black;
 }
